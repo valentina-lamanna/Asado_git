@@ -87,11 +87,12 @@ object osky inherits Persona{
 }
 
 object moni  inherits Persona{
+	const posicionesQueMeHacenFeliz=[101,111,121,131,141,151,161,171,181,191]
 	method laEstaPasandoBien(){
 		return self.comioAlgo() && self.seSentoEnLaPosicion1_1()
 	}
 	method seSentoEnLaPosicion1_1(){
-	 return posicion == 101 || posicion == 111 || posicion == 121 || posicion == 131 || posicion == 141 || posicion == 151 || posicion == 161 || posicion == 171 || posicion == 181 || posicion == 191 
+	 return posicionesQueMeHacenFeliz.contaisn(posicion)
 	 }
 }
 
