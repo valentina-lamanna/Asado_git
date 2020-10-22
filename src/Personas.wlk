@@ -3,7 +3,8 @@ class Persona{
 	var elementosQueTieneCerca=[]
 	var property posicion 
 	var criterioDeAPasar 
-	var dieta = 
+	var dieta 
+	var comidadQueIngrio=[]
 	// PRIMER PUNTO -------------------------------------------------------------------------------------------
 	method pasarUnElementoA(elemento, persona){
 		criterioDeAPasar.pasarUnElemento(self,elemento, persona)
@@ -48,9 +49,17 @@ class Persona{
 	
 	// SEGUNDO PUNTO -----------------------------------------------------------------------------------------------------------
 	method comer(platoDeComida){
+		if(self.afirmarSiCome(platoDeComida)){
+			comidadQueIngrio.add(platoDeComida)
+		}
+	}
+	method afirmarSiCome(platoDeComida){
 		return dieta.come(platoDeComida)
+		
 	}	
 	method cambiarDeDieta(unaDieta){
 		dieta = unaDieta
 	}
+	// TERCER PUNTO -------------------------------------------------------------------------------------------------
+	
 }
