@@ -1,12 +1,13 @@
+import Criterios_Dietas_Platos.*
 class Persona{
 	var elementosQueTieneCerca=[]
 	var property posicion 
 	var criterioDeAPasar 
-	
+	var dieta = 
 	// PRIMER PUNTO -------------------------------------------------------------------------------------------
 	method pasarUnElementoA(elemento, persona){
 		criterioDeAPasar.pasarUnElemento(self,elemento, persona)
-		}
+	}
 		
 	method pasarPimerElementoA(receptor){
 		const elemento = elementosQueTieneCerca.head()
@@ -43,5 +44,13 @@ class Persona{
 	
 	method cambiarCriterrio(criterio){
 		criterioDeAPasar = criterio
+	}
+	
+	// SEGUNDO PUNTO -----------------------------------------------------------------------------------------------------------
+	method comer(platoDeComida){
+		return dieta.come(platoDeComida)
+	}	
+	method cambiarDeDieta(unaDieta){
+		dieta = unaDieta
 	}
 }
