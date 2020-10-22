@@ -56,4 +56,7 @@ class Plato{
 	method tieneMenosDe500Calorias(){
 		return calorias < 500
 	}
+	method esPesada(){
+		return calorias > 500
+	}
 }

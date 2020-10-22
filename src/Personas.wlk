@@ -68,5 +68,43 @@ class Persona{
     method comioComidaPesada(){
     	return comidadQueIngrio.any({comida => comida.esPesada()})
     }
-    
+    // CUARTO PUNTO ------------------------------------------------------------------------------------------------
+   	method comioAlgo(){
+   		return !comidadQueIngrio.empty()
+   	} 
+   	method comioCarne(){
+   		return comidadQueIngrio.any({comida => comida.esCarne()})
+   	}
+   	method noTieneMasDe3ElementosCerca(){
+		return elementosQueTieneCerca.size() <= 3
+   	}
 }
+
+object osky inherits Persona{
+	method laEstaPasandoBien(){
+		return true
+	}
+}
+
+object moni  inherits Persona{
+	method laEstaPasandoBien(){
+		return self.comioAlgo() && self.seSentoEnLaPosicion1_1()
+	}
+	method seSentoEnLaPosicion1_1(){
+	 return posicion == 101 || posicion == 111 || posicion == 121 || posicion == 131 || posicion == 141 || posicion == 151 || posicion == 161 || posicion == 171 || posicion == 181 || posicion == 191 
+	 }
+}
+
+object facu inherits Persona{
+	method laEstaPasandoBien(){
+		return self.comioCarne()
+	}
+}
+
+object vero inherits Persona{
+	method laEstaPasandoBien(){
+		return self.comioAlgo() &&  self.noTieneMasDe3ElementosCerca()
+	}
+}
+
+
