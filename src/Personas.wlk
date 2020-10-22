@@ -61,5 +61,12 @@ class Persona{
 		dieta = unaDieta
 	}
 	// TERCER PUNTO -------------------------------------------------------------------------------------------------
+	method estaPipon(){
+		return self.comioComidaPesada()
+	}
 	
+    method comioComidaPesada(){
+    	return comidadQueIngrio.any({comida => comida.esPesada()})
+    }
+    
 }
